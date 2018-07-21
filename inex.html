@@ -1,0 +1,77 @@
+<!-- @author Ismagilov A.Z. @amirismagilov -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<style>
+   * 
+   {
+      width: 400px;
+      padding: 0;
+	  margin: 0;
+   }
+   #logo 
+   {
+       background-color: #ffdb58;
+	   padding: 10px;
+	   color: #ffffff;
+   }
+   #sometask
+   {
+      width: 100%;
+	  min-height: 200px;
+	  padding: 10px;
+   }
+   #tasktext
+   {
+      width: 100%;
+	  padding: 10px;
+	  min-height: 150px;
+   }
+</style>
+<script>
+   console.log("echo int message1 = 0x27");
+   console.log("echo int main = 0x27");
+   console.log("echo intel:time management echo echo");
+   console.log("echo intel:ABC analyse time management echo echo");
+   console.log("echo intel:20%/80% time management echo echo");
+   $(document).ready(function() {
+    // Handler for .ready() called.
+	 localStorage.content = $('#sometask').html();
+	 $('#sometask').html(localStorage.content);
+	 $( "#buttonsave" ).click(function() {
+        localStorage.content = $('#sometask').html();
+     });
+	 $( "#buttontask" ).click(function() {
+        $('select').on('change', function (e) {
+           var optionSelected = $("option:selected", this);
+           var valueSelected = this.value;
+		   this.value = $('#tasktext').html();
+           //....
+      });
+     });
+   });
+</script>
+</head>
+<body> 
+  
+  <div id="header">
+     <div id="logo"><h2>TimeZilla - Закладки, заметки, дата, время</h2></div>
+  </div>
+  <div id="content">
+    <select name="sometask" size="5" id="sometask">
+      <option>text1</option>
+      <option>text2</option>
+      <option>text3</option>
+      <option>text4</option>
+      <option>text5</option>
+    </select> 
+    <textarea id="tasktext">
+	</textarea>	
+	<button id="buttontask">Изменить</button>
+	<button id="buttonsave">Сохранить</button>
+  </div>
+   
+</body>
+</html><!-- Amir Ismagilov, progamailism@gmail.com -->
